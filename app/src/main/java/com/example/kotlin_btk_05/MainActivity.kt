@@ -35,17 +35,27 @@ class MainActivity : AppCompatActivity() {
         val num1 = binding.editTextsayi1.text.toString().toDoubleOrNull() ?: 0.0
         val num2 = binding.editTextsayi2.text.toString().toDoubleOrNull() ?: 0.0
 
-        val toplam = num1 + num2
-        binding.textViewSonuc.text = toplam.toString()
+        if(num1 !=null && num2 != null){
+            val toplam = num1 + num2
+            binding.textViewSonuc.text = "Sonuç: ${toplam.toString()}"
+        }
+        else {
+            binding.textViewSonuc.text = "Lütfen sayıları girin."
+        }
 
     }
 
     fun cikarmabtn(view: View){
         val num1 = binding.editTextsayi1.text.toString().toDoubleOrNull() ?: 0.0
         val num2 = binding.editTextsayi2.text.toString().toDoubleOrNull() ?: 0.0
+        if(num1 !=null && num2 != null){
+            val cikarma = num1 - num2
+            binding.textViewSonuc.text = "Sonuç: ${cikarma.toString()}"
+        }
+        else {
+            binding.textViewSonuc.text = "Lütfen sayıları girin."
+        }
 
-        val cikarma = num1 - num2
-        binding.textViewSonuc.text = cikarma.toString()
 
     }
 
@@ -53,16 +63,29 @@ class MainActivity : AppCompatActivity() {
         val num1 = binding.editTextsayi1.text.toString().toDoubleOrNull() ?: 0.0
         val num2 = binding.editTextsayi2.text.toString().toDoubleOrNull() ?: 0.0
 
-        val carpma = num1 * num2
-        binding.textViewSonuc.text = carpma.toString()
 
+
+        if(num1 !=null && num2 != null){
+            val carpma = num1 * num2
+            binding.textViewSonuc.text = "Sonuç: ${carpma.toString()}"
+        }
+        else {
+            binding.textViewSonuc.text = "Lütfen sayıları girin."
+        }
     }
 
     fun bölbtn(view: View) {
         val num1 = binding.editTextsayi1.text.toString().toDoubleOrNull() ?: 0.0
         val num2 = binding.editTextsayi2.text.toString().toDoubleOrNull() ?: 0.0
 
-        val bolme = num1 / num2
-        binding.textViewSonuc.text = bolme.toString()
+
+
+        if(num1 !=null && num2 != null){
+            val bolme = num1 / num2
+            binding.textViewSonuc.text = "Sonuç: ${bolme.toString()}"
+        }
+        else {
+            binding.textViewSonuc.text = "Lütfen sayıları girin."
+        }
     }
 }
